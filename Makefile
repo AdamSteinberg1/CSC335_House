@@ -1,7 +1,7 @@
-CC = gcc
+CC = g++
 LDLIBS =  -lglut -lGL -lGLU -lm
 HEADERS = opengl.h structs.h globals.h constants.h prototypes.h
-OBJS = init.o defineBox.o drawBox.o drawAxes.o reshape.o display.o updateRotations.o
+OBJS = init.o defineHouse.o drawHouse.o drawAxes.o reshape.o display.o updateRotations.o keyboardmouse.o
 
 debug ?= n
 ifeq ($(debug), y)
@@ -14,29 +14,32 @@ endif
 house :	main.o $(OBJS)
 	$(CC) $(CFLAGS) main.o $(OBJS) -o house $(LDLIBS)
 
-main.o : main.c $(HEADERS)
-	$(CC) $(CFLAGS) main.c -c
+main.o : main.cpp $(HEADERS)
+	$(CC) $(CFLAGS) main.cpp -c
 
-init.o : init.c $(HEADERS)
-	$(CC) $(CFLAGS) init.c -c
+init.o : init.cpp $(HEADERS)
+	$(CC) $(CFLAGS) init.cpp -c
 
-defineBox.o : defineBox.c $(HEADERS)
-	$(CC) $(CFLAGS) defineBox.c -c
+defineHouse.o : defineHouse.cpp $(HEADERS)
+	$(CC) $(CFLAGS) defineHouse.cpp -c
 
-drawBox.o : drawBox.c $(HEADERS)
-	$(CC) $(CFLAGS) drawBox.c -c
+drawHouse.o : drawHouse.cpp $(HEADERS)
+	$(CC) $(CFLAGS) drawHouse.cpp -c
 
-drawAxes.o : drawAxes.c $(HEADERS)
-	$(CC) $(CFLAGS) drawAxes.c -c
+drawAxes.o : drawAxes.cpp $(HEADERS)
+	$(CC) $(CFLAGS) drawAxes.cpp -c
 
-reshape.o : reshape.c $(HEADERS)
-	$(CC) $(CFLAGS) reshape.c -c
+reshape.o : reshape.cpp $(HEADERS)
+	$(CC) $(CFLAGS) reshape.cpp -c
 
-display.o : display.c $(HEADERS)
-	$(CC) $(CFLAGS) display.c -c
+display.o : display.cpp $(HEADERS)
+	$(CC) $(CFLAGS) display.cpp -c
 
-updateRotations.o : updateRotations.c $(HEADERS)
-	$(CC) $(CFLAGS) updateRotations.c -c
+updateRotations.o : updateRotations.cpp $(HEADERS)
+	$(CC) $(CFLAGS) updateRotations.cpp -c
+
+keyboardmouse.o : keyboardmouse.cpp $(HEADERS)
+	$(CC) -c keyboardmouse.cpp
 
 clean:
 	rm *.o

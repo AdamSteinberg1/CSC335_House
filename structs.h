@@ -18,6 +18,6 @@ typedef struct colortype {
 typedef struct face {
 	vertex point[4];
 	colortype color;
-} box;
+} face;
 
 #endif

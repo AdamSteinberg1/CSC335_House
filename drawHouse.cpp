@@ -1,19 +1,22 @@
-#ifndef DRAWBOX
-#define DRAWBOX
+#ifndef DRAWHOUSE
+#define DRAWHOUSE
 
 #include "opengl.h"
 #include "structs.h"
 
-extern float angle;
-void drawBox( struct face *faces )
+extern float angleX;
+extern float angleY;
+extern float angleZ;
+void drawHouse( struct face *faces )
 {
     int i, j;
 
-    glPolygonMode(GL_FRONT, GL_FILL);
-    glPolygonMode(GL_BACK, GL_FILL);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     glPushMatrix();
-    glRotatef(angle,0.0,0.0,1.0);
+    glRotatef(angleX,1.0,0.0,0.0);
+    glRotatef(angleY,0.0,1.0,0.0);
+    glRotatef(angleZ,0.0,0.0,1.0);
 
     for(j=0;j<7;j++)
     {

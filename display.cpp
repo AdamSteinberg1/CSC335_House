@@ -7,7 +7,6 @@
 
 #include "prototypes.h"
 
-extern float angle;
 void display(void)
 {
 
@@ -17,9 +16,7 @@ void display(void)
    int i, j;
 
 
-   defineBox(&faces[0]);
-
-   glClear (GL_COLOR_BUFFER_BIT);
+   defineHouse(&faces[0]);
    glColor3f (1.0, 1.0, 1.0);
 
 /* ONLY MODIFY CODE BELOW */
@@ -44,7 +41,7 @@ void display(void)
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
    drawAxes(5);
-   drawBox(&faces[0]);
+   drawHouse(&faces[0]);
    glutSwapBuffers();
 
 }

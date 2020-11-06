@@ -2,21 +2,28 @@
 #define PROTOTYPES
 
 #include "structs.h"
-
+/*
 void init(void);
 void drawAxes(int );
-void defineBox( struct face* );
-void drawBox( struct face* );
+void defineHouse( struct face* );
+void drawHouse( struct face* );
 void display(void);
 void updateRotations(void);
 void reshape (int , int );
-
-/*
-void init(void)
-void drawAxes(int length)
-void defineBox( box *face )
-void drawBox( struct box *face )
-void display(void)
-void reshape (int w, int h)
+void mouse(int, int, int, int);
+void keyboard( unsigned char , int , int  );
 */
+
+
+void init(void);
+void drawAxes(int length);
+void defineHouse( face *faces );
+void drawHouse( struct face *faces );
+void display(void);
+void reshape (int w, int h);
+void updateRotations(void);
+void mouse(int button, int state, int x, int y);
+void keyboard( unsigned char key, int x, int y );
+
+
 #endif

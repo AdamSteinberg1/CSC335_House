@@ -1,10 +1,10 @@
-#ifndef DEFINE_BOX
-#define DEFINE_BOX
+#ifndef DEFINE_HOUSE
+#define DEFINE_HOUSE
 
 #include "structs.h"
 
 
-void defineBox( face *faces )
+void defineHouse( face *faces )
 {
 	faces[0].point[0].x = -1.0;  // Bottom
 	faces[0].point[0].y = -1.0;
@@ -29,11 +29,11 @@ void defineBox( face *faces )
 	faces[1].point[0].w =  1.0;
 	faces[1].point[1].x = -1.0;
 	faces[1].point[1].y = -1.0;
-	faces[1].point[1].z =  1.0;
+	faces[1].point[1].z =  1.5;
 	faces[1].point[1].w =  1.0;
 	faces[1].point[2].x =  1.0;
 	faces[1].point[2].y = -1.0;
-	faces[1].point[2].z =  1.0;
+	faces[1].point[2].z =  1.5;
 	faces[1].point[2].w =  1.0;
 	faces[1].point[3].x =  1.0;
 	faces[1].point[3].y = -1.0;
@@ -46,11 +46,11 @@ void defineBox( face *faces )
 	faces[2].point[0].w =  1.0;
 	faces[2].point[1].x = -1.0;
 	faces[2].point[1].y =  1.0;
-	faces[2].point[1].z =  1.0;
+	faces[2].point[1].z =  1.5;
 	faces[2].point[1].w =  1.0;
 	faces[2].point[2].x =  1.0;
 	faces[2].point[2].y =  1.0;
-	faces[2].point[2].z =  1.0;
+	faces[2].point[2].z =  1.5;
 	faces[2].point[2].w =  1.0;
 	faces[2].point[3].x =  1.0;
 	faces[2].point[3].y =  1.0;
@@ -63,11 +63,11 @@ void defineBox( face *faces )
 	faces[3].point[0].w =  1.0;
 	faces[3].point[1].x = -1.0;
 	faces[3].point[1].y = -1.0;
-	faces[3].point[1].z =  1.0;
+	faces[3].point[1].z =  1.5;
 	faces[3].point[1].w =  1.0;
 	faces[3].point[2].x = -1.0;
 	faces[3].point[2].y =  1.0;
-	faces[3].point[2].z =  1.0;
+	faces[3].point[2].z =  1.5;
 	faces[3].point[2].w =  1.0;
 	faces[3].point[3].x = -1.0;
 	faces[3].point[3].y =  1.0;
@@ -80,49 +80,49 @@ void defineBox( face *faces )
 	faces[4].point[0].w =  1.0;
 	faces[4].point[1].x =  1.0;
 	faces[4].point[1].y = -1.0;
-	faces[4].point[1].z =  1.0;
+	faces[4].point[1].z =  1.5;
 	faces[4].point[1].w =  1.0;
 	faces[4].point[2].x =  1.0;
 	faces[4].point[2].y =  1.0;
-	faces[4].point[2].z =  1.0;
+	faces[4].point[2].z =  1.5;
 	faces[4].point[2].w =  1.0;
 	faces[4].point[3].x =  1.0;
 	faces[4].point[3].y =  1.0;
 	faces[4].point[3].z =  0.0;
 	faces[4].point[3].w =  1.0;
 
-	faces[5].point[0].x = 0.0;  // Roof1
+	faces[5].point[0].x =  0.0;  // Roof1
 	faces[5].point[0].y = -1.0;
-	faces[5].point[0].z =  1.5;
+	faces[5].point[0].z =  2.5;
 	faces[5].point[0].w =  1.0;
-	faces[5].point[1].x = 0.0;
+	faces[5].point[1].x =  0.0;
 	faces[5].point[1].y =  1.0;
-	faces[5].point[1].z =  1.5;
+	faces[5].point[1].z =  2.5;
 	faces[5].point[1].w =  1.0;
 	faces[5].point[2].x =  1.0;
 	faces[5].point[2].y =  1.0;
-	faces[5].point[2].z =  1.0;
+	faces[5].point[2].z =  1.5;
 	faces[5].point[2].w =  1.0;
 	faces[5].point[3].x =  1.0;
 	faces[5].point[3].y = -1.0;
-	faces[5].point[3].z =  1.0;
+	faces[5].point[3].z =  1.5;
 	faces[5].point[3].w =  1.0;
 
 	faces[6].point[0].x = -1.0;  // Roof2
 	faces[6].point[0].y = -1.0;
-	faces[6].point[0].z =  1.0;
+	faces[6].point[0].z =  1.5;
 	faces[6].point[0].w =  1.0;
 	faces[6].point[1].x = -1.0;
 	faces[6].point[1].y =  1.0;
-	faces[6].point[1].z =  1.0;
+	faces[6].point[1].z =  1.5;
 	faces[6].point[1].w =  1.0;
 	faces[6].point[2].x =  0.0;
 	faces[6].point[2].y =  1.0;
-	faces[6].point[2].z =  1.5;
+	faces[6].point[2].z =  2.5;
 	faces[6].point[2].w =  1.0;
 	faces[6].point[3].x =  0.0;
 	faces[6].point[3].y = -1.0;
-	faces[6].point[3].z =  1.5;
+	faces[6].point[3].z =  2.5;
 	faces[6].point[3].w =  1.0;
 
 

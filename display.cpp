@@ -7,6 +7,10 @@
 
 #include "prototypes.h"
 
+float camPosX = 6.0;
+float camPosY = 5.0;
+float camPosZ = 3.0;
+
 void display(void)
 {
 
@@ -30,7 +34,7 @@ void display(void)
 
    // Now explicitly place the camera
 
-   gluLookAt (6.0, 5.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+   gluLookAt (camPosX, camPosY, camPosZ, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
 
 /* DO NOT MODIFY ANYTHING ELSE */

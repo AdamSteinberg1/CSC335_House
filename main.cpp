@@ -18,9 +18,14 @@ int main(int argc, char** argv)
    init ();
    glutMouseFunc(mouse);
    glutKeyboardFunc(keyboard);
+   glutSpecialFunc(keyboardSpecial);
    glutDisplayFunc(display);
    glutReshapeFunc(reshape);
    glutIdleFunc(updateRotations);
+
+   createMenus();
+
+
    glutMainLoop();
    return 0;
 }

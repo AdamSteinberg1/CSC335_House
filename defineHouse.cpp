@@ -129,19 +129,19 @@ void defineHouse( face *faces )
 // Define the colors
 //
 	faces[0].color.red   = 1.0;
-	faces[0].color.green = 0.0;
-	faces[0].color.blue  = 0.0;
+	faces[0].color.green = 1.0;
+	faces[0].color.blue  = 1.0;
 
 	faces[1].color.red   = 0.0;
 	faces[1].color.green = 1.0;
 	faces[1].color.blue  = 0.0;
 
-	faces[2].color.red   = 0.0;
-	faces[2].color.green = 0.0;
-	faces[2].color.blue  = 1.0;
+	faces[2].color.red   = 1.0;
+	faces[2].color.green = 1.0;
+	faces[2].color.blue  = 0.0;
 
 	faces[3].color.red   = 1.0;
-	faces[3].color.green = 1.0;
+	faces[3].color.green = 0.0;
 	faces[3].color.blue  = 0.0;
 
 	faces[4].color.red   = 1.0;
@@ -149,12 +149,12 @@ void defineHouse( face *faces )
 	faces[4].color.blue  = 1.0;
 
 	faces[5].color.red   = 0.0;
-	faces[5].color.green = 1.0;
+	faces[5].color.green = 0.0;
 	faces[5].color.blue  = 1.0;
 
-	faces[6].color.red   = 1.0;
-	faces[6].color.green = 0.0;
-	faces[6].color.blue  = 0.0;
+	faces[6].color.red   = 0.0;
+	faces[6].color.green = 1.0;
+	faces[6].color.blue  = 1.0;
 
 }
 

@@ -7,10 +7,8 @@
 
 void drawAxes(int length)
 {
-    int i, len;
-
     // Set up some character arrays for axis labels
-    std::string xaxis = "X";
+    std::string xaxis = "P";
     std::string yaxis = "Y";
     std::string zaxis = "Z";
 

@@ -1,13 +1,17 @@
 #include "opengl.h"
 #include "prototypes.h"
-#include <stdio.h>
-
 extern const int WINDOW_WIDTH;
 extern const int WINDOW_HEIGHT;
 
 extern float angularVelocityX;
 extern float angularVelocityY;
 extern float angularVelocityZ;
+extern float angleX;
+extern float angleY;
+extern float angleZ;
+extern float camPosX;
+extern float camPosY;
+extern float camPosZ;
 
 
 void modifyVelocity(int x, int y, bool increase)
@@ -67,7 +71,6 @@ void modifyVelocity(int x, int y, bool increase)
     }
     else //bottom
     {
-      printf("bottom\n");
       if(increase) //left click
       {
         angularVelocityZ += delta;
@@ -116,5 +119,41 @@ void keyboard( unsigned char key, int x, int y )
     case 'Q':
       exit(0);
       break;
+
+    case 'R':
+    camPosX = 6.0;
+    camPosY = 5.0;
+    camPosZ = 3.0;
+    case 'r':
+      angleX = 0.0;
+      angleY = 0.0;
+      angleZ = 0.0;
+
+    case 's':
+    case 'S':
+      angularVelocityX = 0.0;
+      angularVelocityY = 0.0;
+      angularVelocityZ = 0.0;
+      break;
+
+
   }
+}
+
+void keyboardSpecial(int key, int x, int y)
+{
+  switch (key)
+  {
+    case GLUT_KEY_PAGE_UP:
+      camPosX *= 0.9;
+      camPosY *= 0.9;
+      camPosZ *= 0.9;
+      break;
+    case GLUT_KEY_PAGE_DOWN:
+      camPosX *= 1.1;
+      camPosY *= 1.1;
+      camPosZ *= 1.1;
+      break;
+  }
+  glutReshapeWindow(WINDOW_WIDTH, WINDOW_HEIGHT); //this is called so the far plane will be updated
 }

@@ -3,6 +3,7 @@
 
 #include "opengl.h"
 #include "structs.h"
+#include "prototypes.h"
 
 extern float angleX;
 extern float angleY;
@@ -34,6 +35,8 @@ void drawHouse( struct face *faces )
         }
         glEnd();
     }
+
+    drawHelloWorld();
 
     glPopMatrix();
 

@@ -12,12 +12,13 @@ extern float angleZ;
 extern float camPosX;
 extern float camPosY;
 extern float camPosZ;
+extern int viewMode;
 
 
 void modifyVelocity(int x, int y, bool increase)
 {
   const float delta = 0.5; //how much each click changes the angular velocity
-  const float limit = 10;  //the maximum angulat speed
+  const float limit = 10;  //the maximum angular speed
 
   if(x<WINDOW_WIDTH/2) //left side
   {
@@ -121,9 +122,9 @@ void keyboard( unsigned char key, int x, int y )
       break;
 
     case 'R':
-    camPosX = 6.0;
-    camPosY = 5.0;
-    camPosZ = 3.0;
+      camPosX = 6.0;
+      camPosY = 5.0;
+      camPosZ = 3.0;
     case 'r':
       angleX = 0.0;
       angleY = 0.0;
@@ -142,6 +143,10 @@ void keyboard( unsigned char key, int x, int y )
 
 void keyboardSpecial(int key, int x, int y)
 {
+  //we only want to move the camera in perspective mode
+  if(viewMode != 1)
+    return;
+
   switch (key)
   {
     case GLUT_KEY_PAGE_UP:

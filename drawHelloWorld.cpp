@@ -5,8 +5,11 @@
 #include "opengl.h"
 #include <string>
 
+extern bool helloWorldEnabled;
 void drawHelloWorld()
 {
+    if(!helloWorldEnabled)
+      return;
     //the text to display
     std::string text = "Hello World!";
 

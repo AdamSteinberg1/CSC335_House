@@ -5,10 +5,15 @@
 #include "opengl.h"
 #include <string>
 
+extern bool axisEnabled;
+
 void drawAxes(int length)
 {
+    if(!axisEnabled)
+      return;
+
     // Set up some character arrays for axis labels
-    std::string xaxis = "P";
+    std::string xaxis = "X";
     std::string yaxis = "Y";
     std::string zaxis = "Z";
 
@@ -59,6 +64,7 @@ void drawAxes(int length)
     glTranslatef(4.0, 0.0, -.4);
     glRotatef(90.0, 0.0, 0.0, 1.0);
     glRotatef(90.0, 0.0, 1.0, 0.0);
+    glRotatef(90.0, 0.0, 0.0, 1.0);
     glScalef(0.002,0.002,0.002);
     for (char c : xaxis) {
         glutStrokeCharacter(font, c);

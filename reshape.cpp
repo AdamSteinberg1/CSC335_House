@@ -6,6 +6,7 @@
 extern float camPosX;
 extern float camPosY;
 extern float camPosZ;
+extern int viewMode;
 
 
 void reshape (int w, int h)
@@ -14,9 +15,15 @@ void reshape (int w, int h)
    glMatrixMode (GL_PROJECTION);
    glLoadIdentity ();
    float farPlane = camPosX + camPosY + camPosZ;
-   glFrustum (-1.0, 1.0, -1.0, 1.0, 1.5, farPlane);
-   //glOrtho   (-10.0, 10.0, -10.0, 10.0, 1.0, 20.0);
-
+   switch (viewMode)
+   {
+     case 1:
+        glFrustum(-1.0, 1.0, -1.0, 1.0, 1.5, farPlane);
+        break;
+     case 2:
+        glOrtho(-5.0, 5.0, -5.0, 5.0, 1.0, 20);
+        break;
+   }
    glMatrixMode (GL_MODELVIEW);
 }
 

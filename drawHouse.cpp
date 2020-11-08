@@ -8,11 +8,15 @@
 extern float angleX;
 extern float angleY;
 extern float angleZ;
+extern bool wireframeEnabled;
 void drawHouse( struct face *faces )
 {
     int i, j;
 
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    if(wireframeEnabled)
+      glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    else
+      glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     glPushMatrix();
     glRotatef(angleX,1.0,0.0,0.0);

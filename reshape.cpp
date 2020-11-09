@@ -45,26 +45,31 @@ void promptCustom()
 
 }
 
+void changeProjection()
+{
+  glMatrixMode (GL_PROJECTION);
+  glLoadIdentity ();
+  float farPlane = camPosX + camPosY + camPosZ;
+  switch (viewMode)
+  {
+     case 1: //perspective
+       glFrustum(-1.0, 1.0, -1.0, 1.0, 1.5, farPlane);
+       break;
+     case 2: //orthographic
+       glOrtho(-5.0, 5.0, -5.0, 5.0, 1.0, 20);
+       break;
+     case 3: //custom
+     {
+       promptCustom();
+     }
+  }
+  glMatrixMode (GL_MODELVIEW);
+}
+
 void reshape (int w, int h)
 {
    glViewport (0, 0, (GLsizei) w, (GLsizei) h);
-   glMatrixMode (GL_PROJECTION);
-   glLoadIdentity ();
-   float farPlane = camPosX + camPosY + camPosZ;
-   switch (viewMode)
-   {
-      case 1: //perspective
-        glFrustum(-1.0, 1.0, -1.0, 1.0, 1.5, farPlane);
-        break;
-      case 2: //orthographic
-        glOrtho(-5.0, 5.0, -5.0, 5.0, 1.0, 20);
-        break;
-      case 3: //custom
-      {
-        promptCustom();
-      }
-   }
-   glMatrixMode (GL_MODELVIEW);
+   changeProjection();
 }
 
 #endif

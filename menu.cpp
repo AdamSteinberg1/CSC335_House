@@ -2,6 +2,7 @@
 #define MENU
 
 #include "opengl.h"
+#include "prototypes.h"
 
 extern float camPosX;
 extern float camPosY;
@@ -54,7 +55,7 @@ void onView(int msg)
       viewMode = 3;
       break;
   }
-  glutReshapeWindow(WINDOW_WIDTH, WINDOW_HEIGHT); //this is called so the view will actually update in reshape.c
+  changeProjection();
 }
 
 void onWireframe(int msg)

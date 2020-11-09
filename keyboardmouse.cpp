@@ -160,5 +160,5 @@ void keyboardSpecial(int key, int x, int y)
       camPosZ *= 1.1;
       break;
   }
-  glutReshapeWindow(WINDOW_WIDTH, WINDOW_HEIGHT); //this is called so the far plane will be updated
+  changeProjection();
 }

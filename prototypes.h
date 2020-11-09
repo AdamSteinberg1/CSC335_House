@@ -28,6 +28,7 @@ void keyboard(unsigned char key, int x, int y);
 void keyboardSpecial(int key, int x, int y);
 void createMenus();
 void drawText();
+void changeProjection();
 
 
 #endif
